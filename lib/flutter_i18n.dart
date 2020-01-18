@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:ui';
 
 import 'package:flutter/services.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/widgets.dart';
-import 'package:intl/intl_standalone.dart';
 import 'package:yaml/yaml.dart';
 
 import 'message_printer.dart';
@@ -66,7 +66,7 @@ class FlutterI18n {
   }
 
   Future<Locale> _findCurrentLocale() async {
-    final String systemLocale = await findSystemLocale();
+    final String systemLocale = window.locale.toString();
     MessagePrinter.info("The system locale is $systemLocale");
     final List<String> systemLocaleSplitted = systemLocale.split("_");
     final int countryCodeIndex = systemLocaleSplitted.length == 3 ? 2 : 1;
