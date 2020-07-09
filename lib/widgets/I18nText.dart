@@ -16,7 +16,7 @@ class I18nText extends StatelessWidget {
     this.translationParams,
   }) : assert(
           _key != null,
-          'A non-null String must be provided to a I18nText widget.',
+          'A non-null String must be provided to an I18nText widget.',
         );
 
   I18nText.standalone(
